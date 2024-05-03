@@ -1,0 +1,43 @@
+.side-bar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 72px;
+    top: 55px;
+    background-color: white;
+    z-index: 200;
+    padding-top: 5px;
+}
+
+.sidebar-link {
+    height: 74px;
+    display: flex;
+
+    /* To align the images vertically and horizontally  */
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column; /* To display elements vertically */
+    cursor: pointer;
+   
+
+
+    /* margin-bottom: 1px; */
+    /* background-color: lightgray; */
+}
+
+.sidebar-link:hover {
+    background-color: rgb(235, 235, 235);
+   
+}
+
+.sidebar-link img {
+    height: 24px;
+    margin-bottom: 4px;
+}
+
+.sidebar-link div {
+    /* font-family: Roboto, Arial;  was removed because tall font family us inherited from the body*/
+    font-size: 10px;
+
+}

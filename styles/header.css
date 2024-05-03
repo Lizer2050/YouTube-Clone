@@ -1,0 +1,217 @@
+.header {
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    background-color: white;
+    /* Create line under the header. But we call it the border and below is it's properties*/
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(233, 232, 232);
+}
+  
+
+/* LEFT SECTION */
+.left-section{
+    /* background-color: lightblue; */
+    /* width: 150px; Removed to allow the container to strech*/
+    display: flex;
+    align-items: center; 
+}
+
+.hamburger-menu {
+    height: 24px;
+    margin-left: 24px;
+    margin-right: 24px;
+    cursor: pointer;
+}
+
+.youtube-logo {
+    height: 20px;
+    cursor: pointer;
+}
+
+
+/* MIDDLE SECTION */
+.middle-section {
+    /* background-color: lightpink ; */
+    flex: 1;
+    margin-left: 70px;
+    margin-right: 35px;
+    max-width: 500px ; /*This property sets a limit to the expansion of the search bar area. */ 
+    display: flex;
+    align-items: center;
+    
+}
+ 
+.search-bar {
+    flex: 1;
+    height: 36px;
+    padding-left: 10px;  /*This padding is for the space between the "search" word in the search bar and the border */
+    font-size: 16px; /*Font size of the text typed in the bar*/
+    /* CSS Shortcut */
+    border: 1px solid rgb(194, 192, 192);
+    /* border-width: 1px;
+    border-style: solid;
+    border-color: rgb(194, 192, 192); */
+    border-radius: 2px; 
+    /* measurement for shadow around the bar  */
+    box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
+    width: 0; /* To enable the search bar to shirnk by removing default width */
+    
+    /* display: block;
+    font-size: 20px;
+    margin-left: 12px;  */
+}
+
+.search-bar::placeholder {
+    font-family: Roboto, Arial;
+    font-size: 14px; 
+}
+
+/* .search-bar:hover {
+    border-color: blue;
+
+} */
+
+.search-button {
+    height: 40px;
+    width: 64px;
+    background-color: #f7f7f7;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(194, 192, 192);
+    margin-left: -1px; /*Subtracts space and pulls it to the other side */
+    margin-right: 10px;
+    /* position: relative;*/
+} 
+
+
+/* CREATING TOOL TIPS */
+.search-button, .voice-search-button, 
+.upload-icon-container, .youtube-apps-icons-container,
+.notification-icon-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.search-button .tooltip,
+ .voice-search-button .tooltip,
+ .upload-icon-container .tooltip,
+ .youtube-apps-icons-container .tooltip,
+ .notification-icon-container .tooltip {
+    position: absolute;
+    background-color: gray;
+    color: white;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 8px;
+    padding-left: 8px;
+    font-size: 12px;
+    /* font-family: Roboto, Arial;  was removed because tall font family us inherited from the body*/
+    bottom: -30px;
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* Targeting tool tips in the search button only when we are hovering over it */
+.search-button:hover .tooltip, 
+.voice-search-button:hover .tooltip,
+.upload-icon-container:hover .tooltip,
+.youtube-apps-icons-container:hover .tooltip,
+.notification-icon-container:hover .tooltip {
+     opacity: 1;
+}
+
+
+
+.search-icon{
+    height: 25px;
+    /* margin-top: 4px; */
+    /* Removed to allow the flex box handle the centering */
+
+}
+
+
+
+.voice-search-button{
+    height: 40px;
+    width: 40px;
+    background-color:#f7f7f7;
+    border-radius: 20px;
+    border:none;
+}
+
+.voice-search-icon {
+    height: 24px;
+    /* margin-top: 4px; */
+    /* Removed to allow the flex box handle the centering */
+}
+
+
+/* RIGHT SECTION */
+.right-section {
+    /* background-color: lightblue; */
+    width: 180px;
+    margin-right: 20px  ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;  /* To prevent the section from shrinking when the apge is being minimized */
+    
+}
+
+.uploads-icons {
+    height: 24px;
+}
+
+.youtube-apps-icons{
+    height: 24px;
+}
+
+.notification-icon-container {
+    position: relative;
+
+}
+
+.notifications-icons{
+    height: 24px;
+}
+
+.notifications-count {
+    position: absolute;
+    /* We use negative to let the element exceed the zero position it is already at.  */
+    top: -2px;
+    right: -5px;
+    background-color: rgb(192, 5, 5);
+    color: white;
+    /* font-family: Roboto, Arial;  was removed because tall font family us inherited from the body*/
+    font-size: 11px;
+    padding-left: 5px    ;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;   
+    border-radius: 10px;
+}
+
+.current-user-icon{
+    height:30px;
+    width:30px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
